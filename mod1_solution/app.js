@@ -11,7 +11,9 @@ LunchCheckController.$inject = ['$scope'];
    $scope.CheckIfTooMuch = function () {
     const words = $scope.list_menu.split(',');
     var counter=words.length-1;
-  //  console.log(counter.toString());
+  if (counter === 0) {
+      return 'Please enter data first';
+    }
     if (counter<3) {
       return "Enjoy!";
     }
